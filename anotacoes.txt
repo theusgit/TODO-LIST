@@ -59,6 +59,11 @@ const limparTarefas =()=>{
 - enquanto existir o primeiro filho
 - todoList.removeChild todoList remove o filho mas qual filho?
 - o ultimo filho de todoList
+------------------------------------
+
+Adicionar tarefa escrita pelo user
+
+
 
 
 
