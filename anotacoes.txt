@@ -21,6 +21,10 @@ Colocando parâmetro e marcando checkbox
 
 -adicionar tarefa como parâmetro da função criarItem
 -na div abaixo do input colocar ${tarefa} sinal que está recebendo o parâmetro
+-adicionar outro parâmetro status
+-em checkbox ${status}
+-------------------------------------
+Quando criar tafera com LocalStorage
 
 
 

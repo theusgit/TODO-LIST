@@ -1,18 +1,23 @@
 'use strict';
 
-/* <label class="todo_item">
-                <input type="checkbox">
-                <div>teste de item 1</div>
-                <input type="button" value="X">
-            </label> */
+let banco=[
+    {'tarefa': 'Estudar Js', 'status': ''},
+    {'tarefa': 'Rezar', 'status': 'checked'},
+]
 
-const criarItem = (tarefa, status) => {
+const criarItem = (text, status='') => {
     const item = document.createElement('label');
     item.classList.add('todo_item');
     item.innerHTML = `
     <input type="checkbox" ${status}>
-    <div>${tarefa}</div>
+    <div>${text}</div>
     <input type="button" value="X">
     `
     document.getElementById('todoList').appendChild(item);
 }
+
+const atualizarTela= ()=>{
+    banco.forEach(item=>criarItem(item.tarefa, item.status));
+}
+
+atualizarTela();
