@@ -26,6 +26,77 @@ Colocando parâmetro e marcando checkbox
 -------------------------------------
 Quando criar tafera com LocalStorage
 
+let banco=[
+    {'tarefa': 'Estudar Js', 'status': ''},
+    {'tarefa': 'Rezar', 'status': 'checked'},
+]
+simulação de um banco de dados
+
+
+const atualizarTela= ()=>{
+    banco.forEach(item=>criarItem(item.tarefa, item.status));
+}
+
+atualizarTela();
+
+-cria função que percorre o banco de dados manda para item, item recebe criarItem(item.tarefa, item.status)
+-chamar função
+--------------------------------------
+
+LimpandoTarefas
+
+toda vez que a função atualizarTela é chamada é criado outro label igual, está se repetindo e para parar essa repetição.
+
+const limparTarefas =()=>{
+    const todoList= document.getElementById('todoList');
+    while(todoList.firstChild){
+        todoList.removeChild(todoList.lastChild);
+    }
+}
+
+-função limparTarefas
+-pegar id pai
+- enquanto existir o primeiro filho
+- todoList.removeChild todoList remove o filho mas qual filho?
+- o ultimo filho de todoList
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

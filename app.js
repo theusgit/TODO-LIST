@@ -16,8 +16,37 @@ const criarItem = (text, status='') => {
     document.getElementById('todoList').appendChild(item);
 }
 
+const limparTarefas =()=>{
+    const todoList= document.getElementById('todoList');
+    while(todoList.firstChild){
+        todoList.removeChild(todoList.lastChild);
+    }
+}
+
+
 const atualizarTela= ()=>{
+    limparTarefas();
     banco.forEach(item=>criarItem(item.tarefa, item.status));
 }
 
 atualizarTela();
+atualizarTela();
+atualizarTela();
+atualizarTela();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
