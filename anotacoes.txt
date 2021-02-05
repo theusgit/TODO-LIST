@@ -1,0 +1,44 @@
+'use strict'
+
+const criarItem = () => {
+    const item = document.createElement('label');
+    item.classList.add('todo_item');
+    item.innerHTML = `
+    <input type="checkbox">
+    <div>teste de item 1</div>
+    <input type="button" value="X">
+    `
+    document.getElementById('todoList').appendChild(item);
+}
+
+Criando uma função de criarItem
+-createelement cria elemento label
+-classList.add adiciona uma class ao label 
+-inner faz o conteudo aparecer
+-getElementById chama o ID de todoList e appendChild(item) adiciona item como filho
+-------------------------------------
+Colocando parâmetro e marcando checkbox
+
+-adicionar tarefa como parâmetro da função criarItem
+-na div abaixo do input colocar ${tarefa} sinal que está recebendo o parâmetro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
