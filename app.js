@@ -1,9 +1,15 @@
 'use strict';
 
-let banco = [
+
+
+/*let banco = [
     { 'tarefa': 'Estudar Js', 'status': '' },
     { 'tarefa': 'Rezar', 'status': 'checked' },
 ]
+*/
+
+const getBanco = () => JSON.parse(localStorage.getItem('todoList')) ?? [];
+const setBanco = (banco) => localStorage.setItem('todoList', JSON.stringify(banco));
 
 const criarItem = (text, status, indice) => {
     const item = document.createElement('label');
@@ -26,6 +32,7 @@ const limparTarefas = () => {
 
 const atualizarTela = () => {
     limparTarefas();
+    const banco = getBanco();
     banco.forEach((item, indice) => criarItem(item.tarefa, item.status, indice));
 }
 
@@ -34,19 +41,25 @@ const inserirItem = (evento) => {
     const tecla = evento.key;
     const texto = evento.target.value;
     if (tecla === 'Enter') {
+        const banco  = getBanco();
         banco.push({ 'tarefa': texto, 'status': '' });
+        setBanco(banco);
         atualizarTela();
         evento.target.value = '';
     }
 }
 
 const atualizarItem = (indice) =>{
+    const banco = getBanco();
     banco[indice].status = banco[indice].status === '' ? 'checked': '';
+    setBanco(banco);
     atualizarTela();
 }
 
 const removerItem = (indice) => {
+    const banco = getBanco();
     banco.splice(indice, 1);
+    setBanco(banco);
     atualizarTela();
 }
 
@@ -55,7 +68,7 @@ const clickItem = (evento) => {
     const elemento = evento.target;
     if (elemento.type === 'button') {
         const indice = elemento.dataset.indice;
-        removerItem(index);
+        removerItem(indice);
     } else if (elemento.type === 'checkbox') {
         const indice = elemento.dataset.indice;
         atualizarItem(indice);
