@@ -63,7 +63,30 @@ const limparTarefas =()=>{
 
 Adicionar tarefa escrita pelo user
 
+const inserirItem = (evento) => {
+    const tecla = evento.key;
+    const texto = evento.target.value;
+    if (tecla === 'Enter') {
+        banco.push({ 'tarefa': texto, 'status': '' });
+        atualizarTela();
+        evento.target.value = ''
+    }
+}
 
+
+
+document.getElementById('newItem').addEventListener('keypress', inserirItem);
+
+-Chamar o documento new item
+-ouvir keypress e chamar função inserirItem
+-receber parâmetro de evento
+- const tecla para receber evento que aponta para key 
+
+-Se a tecla pressionada for igual a 'Enter'
+- é feito um push no array banco que na mesma estrutura adiciona um a const texto e o status
+- a const texto recebe o evento o alvo e o valor
+-chamar funcao de atualizarTela
+-evento.target.value='' somente para zerar o campo de escrever a tarefa
 
 
 
